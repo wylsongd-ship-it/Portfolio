@@ -182,22 +182,41 @@ section.alt{background:var(--bg-alt)}
 section.alt .chips span{background:#fff}
 
 /* ---------- FORMATION ---------- */
-.form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
 .form-card{
-  background:#fff;border-radius:20px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.06);
+  display:flex;flex-direction:column;
+  background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px;
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
   transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
 }
 .form-card:hover{transform:translateY(-6px);box-shadow:0 20px 46px rgba(0,0,0,.12)}
-.form-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-.form-ico{font-size:30px;line-height:1}
-.state{font-size:12.5px;font-weight:500;padding:4px 12px;border-radius:980px}
-.state.on{color:var(--blue);background:rgba(0,113,227,.1)}
-.state.done{color:var(--grey);background:var(--bg-alt)}
-.form-card h3{font-size:23px;font-weight:600;letter-spacing:-.02em;margin:0 0 6px}
-.form-field{font-size:16.5px;color:var(--blue);margin:0 0 4px}
-.form-years{font-size:15px;color:var(--grey-2);margin:0 0 20px}
-.form-tags{display:flex;flex-wrap:wrap;gap:8px}
-.form-tags span{font-size:13px;color:var(--grey);background:var(--bg-alt);padding:5px 12px;border-radius:980px}
+/* variante sombre — alternance sombre / claire / sombre */
+.form-card.dark{background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.16)}
+.form-card.dark:hover{box-shadow:0 20px 46px rgba(0,0,0,.30)}
+
+.form-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:34px}
+.form-ico{
+  width:52px;height:52px;border-radius:15px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--bg-alt);color:var(--ink);
+}
+.form-ico svg{width:26px;height:26px}
+.form-card.dark .form-ico{background:rgba(255,255,255,.10);color:#fff}
+
+.state{
+  font-size:13px;font-weight:600;letter-spacing:-.01em;white-space:nowrap;
+  padding:7px 15px;border-radius:980px;color:var(--blue);background:rgba(0,113,227,.10);
+}
+.form-card.dark .state{color:#F5F5F7;background:rgba(255,255,255,.12)}
+
+.form-card h3{font-size:26px;font-weight:700;letter-spacing:-.025em;margin:0 0 8px}
+.form-field{font-size:17px;color:var(--grey);margin:0 0 10px;line-height:1.45}
+.form-card.dark .form-field{color:rgba(255,255,255,.62)}
+.form-years{font-size:16px;font-weight:600;color:var(--blue);margin:0 0 22px}
+.form-card.dark .form-years{color:rgba(255,255,255,.78)}
+.form-tags{display:flex;flex-wrap:wrap;gap:9px}
+.form-tags span{font-size:14px;color:var(--grey);background:var(--bg-alt);padding:8px 16px;border-radius:980px}
+.form-card.dark .form-tags span{color:#F5F5F7;background:rgba(255,255,255,.10)}
 
 /* ---------- CONTACT ---------- */
 .contact{text-align:center}
@@ -270,6 +289,8 @@ footer p{font-size:14px;color:var(--grey-2);margin:0}
   .burger{display:flex}
   section{padding:72px 0}
   .profil,.skills{grid-template-columns:1fr;gap:34px}
+  .form-grid{grid-template-columns:1fr}
+  .form-card{padding:28px}
   .tl-row{grid-template-columns:1fr;gap:10px;padding:34px 0}
   .term-body{font-size:12px;padding:22px 20px 26px;line-height:2.1}
   .avatar{width:120px;height:120px}
@@ -466,6 +487,66 @@ footer p{font-size:14px;color:var(--grey-2);margin:0}
   </div>
 </section>
 
+<!-- ============ FORMATION ============ -->
+<section id="formation">
+  <div class="wrap">
+    <p class="eyebrow rv">Formation</p>
+    <h2 class="sec-h rv">Diplômes</h2>
+    <div class="form-grid" style="margin-top:52px">
+
+      <article class="form-card dark rv">
+        <div class="form-top">
+          <span class="form-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3 1.5 8.5 12 14l10.5-5.5L12 3Z"/>
+              <path d="M5.5 10.7v5.1c0 .5.2.9.6 1.2 1.5 1.1 3.6 1.7 5.9 1.7s4.4-.6 5.9-1.7c.4-.3.6-.7.6-1.2v-5.1"/>
+              <path d="M21.2 9v5.4"/>
+            </svg>
+          </span>
+          <span class="state">En cours</span>
+        </div>
+        <h3>Bachelor RDC</h3>
+        <p class="form-field">Responsable du développement commercial — en alternance</p>
+        <p class="form-years">2026 – 2027</p>
+        <div class="form-tags"><span>Développement commercial</span><span>Communication</span><span>Alternance</span></div>
+      </article>
+
+      <article class="form-card rv">
+        <div class="form-top">
+          <span class="form-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 4v16h18"/>
+              <path d="m7 15 3.8-4.3 3 2.6L21 6.5"/>
+              <path d="M16.4 6.5H21V11"/>
+            </svg>
+          </span>
+          <span class="state">Diplôme obtenu</span>
+        </div>
+        <h3>BTS NDRC</h3>
+        <p class="form-field">Négociation et Digitalisation de la Relation Client</p>
+        <p class="form-years">2024 – 2026</p>
+        <div class="form-tags"><span>Négociation</span><span>Relation client</span><span>Prospection</span><span>Digitalisation</span></div>
+      </article>
+
+      <article class="form-card dark rv">
+        <div class="form-top">
+          <span class="form-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="3.1"/>
+              <path d="M19.5 14.6a1.6 1.6 0 0 0 .3 1.8l.1.1a1.9 1.9 0 1 1-2.7 2.7l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a1.9 1.9 0 1 1-3.8 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a1.9 1.9 0 1 1-2.7-2.7l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3.4a1.9 1.9 0 1 1 0-3.8h.1a1.6 1.6 0 0 0 1.5-1.1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a1.9 1.9 0 1 1 2.7-2.7l.1.1a1.6 1.6 0 0 0 1.8.3h.1a1.6 1.6 0 0 0 1-1.5V3.4a1.9 1.9 0 1 1 3.8 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a1.9 1.9 0 1 1 2.7 2.7l-.1.1a1.6 1.6 0 0 0-.3 1.8v.1a1.6 1.6 0 0 0 1.5 1h.2a1.9 1.9 0 1 1 0 3.8h-.1a1.6 1.6 0 0 0-1.5 1Z"/>
+            </svg>
+          </span>
+          <span class="state">Diplôme obtenu</span>
+        </div>
+        <h3>Bac Pro</h3>
+        <p class="form-field">Plastiques et Composites</p>
+        <p class="form-years">2021 – 2024</p>
+        <div class="form-tags"><span>Rigueur technique</span><span>Lecture de plans</span><span>Stages en entreprise</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
 
 <!-- ============ CONTACT ============ -->
 <section id="contact" class="contact alt">
