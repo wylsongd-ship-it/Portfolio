@@ -155,6 +155,26 @@ section.alt{background:var(--bg-alt)}
   position:absolute;bottom:15px;left:22px;font-family:var(--mono);font-size:8px;font-weight:700;
   letter-spacing:.9px;color:#1B2A4A;background:#F2C14E;padding:4px 9px;border-radius:3px;transform:rotate(-4deg);
 }
+/* Vignette WaRent : meme ossature que .fp, mais la charte du site est sombre
+   et son accent turquoise. */
+.wr{position:absolute;inset:0;background:#050607;display:flex;flex-direction:column}
+.wr-top{display:flex;align-items:center;gap:5px;padding:8px 11px;background:#101317;border-bottom:1px solid rgba(255,255,255,.07)}
+.wr-top i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.22);display:block}
+.wr-top span{margin-left:7px;font-family:var(--mono);font-size:8px;color:rgba(255,255,255,.45);overflow:hidden;white-space:nowrap}
+.wr-mid{
+  flex:1;padding:0 22px;display:flex;flex-direction:column;justify-content:center;position:relative;
+  background:radial-gradient(120% 90% at 50% 0%,rgba(34,193,195,.16),transparent 62%),linear-gradient(180deg,#0b0e12 0%,#050607 100%);
+}
+.wr-nav{position:absolute;top:11px;right:15px;font-size:7.5px;color:rgba(255,255,255,.5);letter-spacing:.2px}
+.wr-title{font-size:clamp(17px,3.2vw,24px);line-height:1.1;font-weight:700;letter-spacing:-.03em;color:#fff}
+.wr-title em{font-style:normal;color:#22C1C3}
+.wr-bar{
+  position:absolute;left:22px;right:22px;bottom:14px;display:flex;align-items:center;gap:6px;
+  padding:7px 9px;border-radius:7px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
+}
+.wr-bar b{font-size:7.5px;font-weight:500;color:rgba(255,255,255,.62);letter-spacing:.2px}
+.wr-bar u{margin-left:auto;text-decoration:none;font-family:var(--mono);font-size:7px;font-weight:700;
+  letter-spacing:.6px;color:#05201F;background:#22C1C3;padding:4px 8px;border-radius:4px}
 .proj-info{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
 .proj-head{display:flex;align-items:center;gap:11px;margin-bottom:5px;flex-wrap:wrap}
 .proj-info h3{font-size:24px;font-weight:600;letter-spacing:-.022em;margin:0}
@@ -437,12 +457,32 @@ footer p{font-size:14px;color:var(--grey-2);margin:0}
         </div>
       </article>
 
-      <article class="proj soon rv">
-        <div>
-          <div class="p">+</div>
-          <p>Projet à venir</p>
+      <article class="proj live rv">
+        <a class="proj-thumb" href="https://warent.vercel.app" target="_blank" rel="noopener" aria-label="Ouvrir la démo WaRent">
+          <div class="wr">
+            <div class="wr-top"><i></i><i></i><i></i><span>warent.vercel.app</span></div>
+            <div class="wr-mid">
+              <div class="wr-nav">Comment ça marche · Mes réservations · Contact</div>
+              <div class="wr-title">Louez des voitures<br><em>premium</em> sans tracas</div>
+              <div class="wr-bar"><b>Lorient</b><b>·</b><b>20/09 → 27/09</b><u>RECHERCHER</u></div>
+            </div>
+          </div>
+        </a>
+        <div class="proj-info">
+          <div class="proj-head">
+            <h3>WaRent</h3>
+            <span class="pill-live">En ligne</span>
+          </div>
+          <p class="proj-sub">Location de voitures · Réservation &amp; suivi</p>
+          <p class="proj-desc">Site de location de véhicules à Lorient : recherche par dates, fiches véhicule, demande de réservation qui délivre un numéro, et espace « Mes réservations » pour la retrouver. Bilingue FR/EN, et le thème clair ou sombre suit le réglage de l'appareil.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vercel</span></div>
+          <div class="proj-links">
+            <a href="https://warent.vercel.app" target="_blank" rel="noopener" class="btn btn-blue">Voir la démo</a>
+            <a href="https://github.com/wylsongd-ship-it/Warent" target="_blank" rel="noopener" class="btn btn-soft">Code</a>
+          </div>
         </div>
       </article>
+
       <article class="proj soon rv">
         <div>
           <div class="p">+</div>
